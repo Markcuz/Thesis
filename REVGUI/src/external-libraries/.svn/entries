@@ -1,0 +1,46 @@
+10
+
+dir
+2610
+http://ciips.ee.uwa.edu.au/svn/REV/Lotus/external-libraries
+http://ciips.ee.uwa.edu.au/svn
+
+
+
+2011-08-05T10:02:06.467761Z
+2604
+REV01
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cf653e7c-3d07-0410-ad6d-a9cb27876c41
+
+curl-7.21.7-devel-mingw32
+dir
+
+xsens
+dir
+
+qextserialport
+dir
+
+qtcore_private
+dir
+
+top16
+dir
+
+twitcurl
+dir
+

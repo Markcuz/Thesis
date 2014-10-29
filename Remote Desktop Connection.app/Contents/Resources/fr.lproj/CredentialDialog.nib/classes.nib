@@ -1,0 +1,38 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {cancelClicked = id; okClicked = id; }; 
+            CLASS = CredentialDialog; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                addToKeychainCheckBox = NSButton; 
+                captionField = NSTextField; 
+                domainField = NSTextField; 
+                messageField = NSTextField; 
+                passwordField = NSSecureTextField; 
+                userNameField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindow; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = LimitedLengthSecureTextField; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSSecureTextField; 
+        }, 
+        {CLASS = LimitedLengthTextField; LANGUAGE = ObjC; SUPERCLASS = NSTextField; }, 
+        {
+            CLASS = RDCApp; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                aboutPanel = AboutPanel; 
+                autoReconnectPanel = AutoReconnectPanel; 
+                credentialDialog = CredentialDialog; 
+                preferenceController = PreferenceController; 
+                preferences = Preferences; 
+            }; 
+            SUPERCLASS = NSApplication; 
+        }
+    ); 
+    IBVersion = 1; 
+}

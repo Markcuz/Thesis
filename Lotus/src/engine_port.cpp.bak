@@ -1,0 +1,194 @@
+#include "engine_port.h"
+
+engine_port::engine_port()
+{
+    // Connect for error checks
+    connect(&m_socket, SIGNAL(error(QAbstractSocket::SocketError)),
+            this, SLOT(connectionError(QAbstractSocket::SocketError)));
+
+    connect(&m_socket, SIGNAL(connected()),
+            this, SLOT(connect_engine()));
+
+    connect(&m_socket, SIGNAL(stateChanged ( QAbstractSocket::SocketState )),
+            this, SLOT(state_change(QAbstractSocket::SocketState)));
+}
+
+bool engine_port::init(int vol) {
+
+    volume = vol;
+    devName = "Engine Sounds";
+    host = "127.0.0.1";
+
+    CurrentGear = 0;
+    CurrentRPM = 2000;
+    CurrentSpeed = 30;
+    DeltaRPM = 0;
+    Throttle = 0;
+    gearsOn = false;
+
+
+    GearBox_SetNumGears(DEFAULT_NUM_GEARS);
+    GearBox_SetGearRatios(DEFAULT_BASE_RATIO, DEFAULT_RATIO_GROWTH, DEFAULT_GROWTH_REDUCTION);
+
+    emit debugMsg(QtDebugMsg, devName, "Connecting to Program");
+
+    //connect the socket
+    m_socket.connectToHost(host, port);
+    return 0;
+}
+
+void engine_port::close() {
+    strcpy(sendbuf,"STOP");
+    BytesSent = m_socket.write(sendbuf,strlen(sendbuf));
+    m_socket.close();
+    //BytesSent = send(SendingSocket, sendbuf, strlen(sendbuf), 0);
+}
+
+void engine_port::connect_engine(){
+    emit debugMsg(QtDebugMsg, devName, "Sending Data");
+    strcpy(sendbuf,"STAR");
+    BytesSent = m_socket.write(sendbuf,strlen(sendbuf));
+    volumeChange(volume);
+}
+
+void engine_port::sendData(int data) {
+    itoa(data,sendbuf,10);
+    BytesSent = m_socket.write(sendbuf,strlen(sendbuf));
+    //BytesSent = send(SendingSocket, sendbuf, strlen(sendbuf), 0);
+}
+
+void engine_port::currentSend(float data) {
+    if(!gearsOn) {
+
+        float max;
+        float g;
+        if(data < 130) {
+            max = 150;
+            g = 3500/max;
+        }
+        else {
+            max = 200;
+            g = 8000/max;
+        }
+        int t = int(g*data + 1800);
+        CurrentRPM = t;
+    }
+    else {
+        Throttle = (0.8/400)*(data - 15);
+        if(Throttle < 0) {
+            Throttle = 0;
+        }
+        this->GearBox_Update_Auto(CurrentSpeed,Throttle);
+    }
+
+    this->sendData(CurrentRPM);
+
+
+    /*
+    QString q,r,s,t;
+    q.setNum(this->CurrentGear);
+    r.setNum(this->CurrentRPM);
+    s.setNum(this->CurrentSpeed);
+    t.setNum(Throttle);
+    emit debugMsg(QtDebugMsg,devName,"Gear: " + q);
+    emit debugMsg(QtDebugMsg,devName,"RPM: " + r);
+    emit debugMsg(QtDebugMsg,devName,"Speed: " + s);
+    emit debugMsg(QtDebugMsg,devName,"Throttle: " + t);
+    */
+}
+
+void engine_port::volumeChange(int vol) {
+    //emit debugMsg(QtDebugMsg, devName, "Volume Adjustment");
+    QString t;
+    t.setNum(vol);
+    if(vol/10 >= 1) {
+        t = "0" + t;
+    }
+    else if (vol/10 == 0) {
+        t = "00" + t;
+    }
+    if (vol/100 == 1) {
+        t = "0" + t;
+    }
+    t = "V" + t;
+    QByteArray n = t.toAscii();
+    BytesSent = m_socket.write(n);
+}
+
+void engine_port::connectionError(QAbstractSocket::SocketError)
+{
+    emit debugMsg(QtCriticalMsg, devName, m_socket.errorString());
+    if(m_socket.error() == 0) {
+        this->init(volume);
+    }
+}
+
+void engine_port::state_change(QAbstractSocket::SocketState)
+{
+    QString msg;
+    msg.setNum(m_socket.state());
+    emit debugMsg(QtCriticalMsg,devName,msg);
+}
+
+void engine_port::boot_failure() {
+    emit debugMsg(QtDebugMsg,devName,"Engine Sounds Library has failed to execute");
+}
+
+void engine_port::GearBox_SetGearRatios(float Base, float Growth, float Reduction) {
+        RatioBase = Base;
+        RatioGrowth = Growth;
+        GrowthReduction = Reduction;
+        GearBox_ApplyGearRatios();
+}
+
+void engine_port::GearBox_ApplyGearRatios() {
+        float b = RatioBase;
+        float g = RatioGrowth;
+        int i;
+        for (i=0; i < 6; i++) {
+                GearRatios[i] = b;
+                b = b * g;
+                g = g * GrowthReduction;
+                // QString t;
+                //t.setNum(GearRatios[i]);
+                //emit debugMsg(QtDebugMsg, devName, t);
+        }
+}
+
+void engine_port::GearBox_SetNumGears(int Gears) {
+        NumGears = Gears;
+}
+
+void engine_port::GearBox_Update_Auto(int Speed, float Throttle) {
+
+        // basic data update
+        int OldRPM = CurrentRPM;
+        CurrentSpeed = Speed;
+        Throttle = Throttle;
+        CurrentRPM = Speed / GearRatios[CurrentGear];
+        DeltaRPM = CurrentRPM - OldRPM;
+
+        // gear logic
+        int SwitchUp = RPM_CRUISE_IDEAL + ( (RPM_MAX-RPM_MIN) * Throttle );
+        int SwitchDown;
+        if (Throttle < TURBO_SHIFT_DOWN_THROTTLE)
+                SwitchDown = RPM_CRUISE_LOW;
+        else
+                SwitchDown = RPM_CRUISE_HIGH;
+        if (OldRPM >= SwitchUp && CurrentGear < NumGears-1) {
+                CurrentGear++;
+                CurrentRPM = Speed / GearRatios[CurrentGear];
+                //Audio_ClearActiveSounds();
+        }
+        else if (OldRPM < SwitchDown && CurrentGear > 0) {
+                CurrentGear--;
+                CurrentRPM = Speed /GearRatios[CurrentGear];
+                //Audio_ClearActiveSounds();
+        }
+}
+
+
+
+
+
+

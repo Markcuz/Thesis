@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32
+END
+RELEASE-NOTES
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/RELEASE-NOTES
+END
+CHANGES
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/CHANGES
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/COPYING
+END
+curl.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/curl.html
+END
+mk-ca-bundle.vbs
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/mk-ca-bundle.vbs
+END
+mk-ca-bundle.pl
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/mk-ca-bundle.pl
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/README
+END
+build.txt
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/build.txt
+END
+curl.pdf
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/curl.pdf
+END
+libcurl.pc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/libcurl.pc
+END

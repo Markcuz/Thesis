@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/bin
+END
+libssh2.dll
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/bin/libssh2.dll
+END
+librtmp.dll
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/bin/librtmp.dll
+END
+libeay32.dll
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/bin/libeay32.dll
+END
+curl.exe
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/bin/curl.exe
+END
+libcurl.dll
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/bin/libcurl.dll
+END
+libssl32.dll
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/bin/libssl32.dll
+END
+libidn-11.dll
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/bin/libidn-11.dll
+END
+zlib1.dll
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/bin/zlib1.dll
+END

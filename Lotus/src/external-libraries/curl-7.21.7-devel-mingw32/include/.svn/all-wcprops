@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include
+END
+libssh2_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/libssh2_config.h
+END
+config-win32.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/config-win32.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/README
+END

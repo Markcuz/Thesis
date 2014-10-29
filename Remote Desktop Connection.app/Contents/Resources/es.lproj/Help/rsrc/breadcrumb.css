@@ -1,0 +1,88 @@
+/* Modified: 100616.1300 */
+
+#bc_breadcrumb
+{
+	background-color:#A3A3A3;
+    background-image:url('breadcrumbbkg.gif');
+    background-repeat:repeat-x;
+	font-size:8pt;
+	color:#555555;
+	padding:2px 28px 0 18px;
+	margin-right:0;
+	height:18px;
+	min-width:440px;
+	border-bottom:1px solid #A3A3A3;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	/*-moz-box-shadow:-4px 4px 7px #999999;
+	-webkit-box-shadow:-4px 4px 7px #999999;*/
+}
+
+#bc_breadcrumb a
+{
+	color: #333333;
+	text-shadow: rgba(10, 10, 10, 0.3) 0px 1px 2px;
+}
+
+span.breadcrumb
+{
+	font-size:8pt;
+}
+
+span.breadcrumb a
+{
+	color: #666666;
+}
+
+#onlineHelpLink
+{
+	/*background-color:#E0E0E0;*/
+	background-color:#FDEFAE;
+	background-image:url('goonlinebkg.gif');
+    top:0;
+	color:#000000;
+	padding:0 14px 0 14px;
+	height:22px;
+	min-width:440px;
+	margin-top:0px;
+	margin-bottom:0;
+	margin-right:0;
+}
+
+#onlineHelpLink input
+{
+	font-size: 10px;
+	height:18px;
+	padding-top:0;
+	padding-bottom:0;
+	margin-top:0;
+	margin-bottom:0;
+	cursor:pointer;
+}
+
+#onlineHelpLink td
+{
+	font-size: 8pt;
+}
+
+#onlineHelpLink table
+{
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+}
+
+.betaNotice 
+{
+	font-size:8pt; 
+	margin-top:0px;
+	margin-bottom:8px; 
+	line-height:10pt; 
+	margin-left:65px; 
+	text-indent:-6px;
+}
+
+td.appicon
+{
+	width:32px;
+}

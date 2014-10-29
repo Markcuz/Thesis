@@ -1,0 +1,4 @@
+/home/gabriel/opt/gcc-4.7-linaro-rpi-gnueabihf/bin/arm-linux-gnueabihf-g++ -c -pipe -marm -mfpu=vfp -mtune=arm1176jzf-s -march=armv6zk -mabi=aapcs-linux -mfloat-abi=hard --sysroot=/home/gabriel/opt/rasp-pi-rootfs -B=. -g -Wall -D_REENTRANT -fPIC *.cpp
+
+
+/home/gabriel/opt/gcc-4.7-linaro-rpi-gnueabihf/bin/arm-linux-gnueabihf-g++ -pipe -marm -mfpu=vfp -mtune=arm1176jzf-s -march=armv6zk -mabi=aapcs-linux -mfloat-abi=hard --sysroot=/home/gabriel/opt/rasp-pi-rootfs -B=. -g -D_REENTRANT -shared -Wl,-soname,libxsens_cmt.so.1 -o libxsens_cmt.so.1.0 *.o

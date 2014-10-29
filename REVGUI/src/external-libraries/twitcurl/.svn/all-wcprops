@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl
+END
+urlencode.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/urlencode.cpp
+END
+SHA1.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/SHA1.h
+END
+twitcurl.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/twitcurl.h
+END
+HMAC_SHA1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/HMAC_SHA1.cpp
+END
+base64.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/base64.cpp
+END
+urlencode.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/urlencode.h
+END
+oauthlib.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/oauthlib.cpp
+END
+HMAC_SHA1.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/HMAC_SHA1.h
+END
+base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/base64.h
+END
+SHA1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/SHA1.cpp
+END
+oauthlib.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/oauthlib.h
+END
+twitcurl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/twitcurl/twitcurl.cpp
+END

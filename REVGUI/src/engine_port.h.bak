@@ -1,0 +1,90 @@
+#ifndef ENGINE_PORT_H
+#define ENGINE_PORT_H
+
+#include <winsock2.h>
+#include <stdio.h>
+#include <ws2tcpip.h>
+#include <QThread>
+#include <string>
+#include <sstream>
+#include <string>
+#include <QtCore>
+#include <QTcpSocket>
+
+
+/* SIMULATED GEAR SETTINGS */
+#define MAX_GEARS					12
+#define DEFAULT_NUM_GEARS			6
+#define DEFAULT_BASE_RATIO			0.009f
+#define DEFAULT_RATIO_GROWTH		1.700f
+#define DEFAULT_GROWTH_REDUCTION	0.920f
+#define RPM_CRUISE_LOW				1950
+#define RPM_CRUISE_IDEAL			2300
+#define RPM_CRUISE_HIGH				2700
+#define RPM_MIN						2000
+#define RPM_MAX						5000
+#define TURBO_SHIFT_DOWN_THROTTLE	0.400f
+
+
+class engine_port : public QObject
+{
+
+Q_OBJECT
+
+public:
+    engine_port();
+
+
+    bool init(int);
+    //void connect_engine();
+    void close();
+    void sendData(int);
+    void testSend();
+    void testSend2();
+    void currentSend(float);
+    void boot_failure();
+    void volumeChange(int);
+    void GearBox_Update_Auto(int, float);
+    void GearBox_SetNumGears(int);
+    void GearBox_ApplyGearRatios();
+    void GearBox_SetGearRatios(float, float, float);
+
+signals:
+    void debugMsg(QtMsgType, QString, QString);
+
+private:
+    WSADATA             wsaData;
+    SOCKET              SendingSocket;
+    SOCKADDR_IN         ServerAddr;
+    char                sendbuf[5];
+    int                 BytesSent, nlen;
+    static const unsigned int        port = 3000;
+    QString host;
+    int  RetCode;
+    QString devName;
+    QTcpSocket  m_socket;
+    int volume;
+
+    // Car Data
+    int 	CurrentRPM;
+    int 	DeltaRPM;
+    int 	CurrentSpeed;
+    int 	CurrentGear;
+    float 	Throttle;
+
+    //Gear Configuration
+    int 	 NumGears;
+    float 	 GearRatios[DEFAULT_NUM_GEARS];
+    float 	 RatioBase;
+    float 	 RatioGrowth;
+    float 	 GrowthReduction;
+    bool         gearsOn;
+
+private slots:
+    void connectionError(QAbstractSocket::SocketError);
+    void state_change(QAbstractSocket::SocketState);
+    void connect_engine();
+
+};
+
+#endif // ENGINE_PORT_H

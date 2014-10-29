@@ -1,0 +1,185 @@
+{
+    IBClasses = (
+        {
+            CLASS = AboutPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                applicationNameField = NSTextField; 
+                copyrightField = NSTextField; 
+                versionField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindow; 
+        }, 
+        {
+            CLASS = AutoReconnectPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                fitToWindowMenuItem = NSMenuItem; 
+                fullScreenMenuItem = NSMenuItem; 
+                progressIndicator = NSProgressIndicator; 
+            }; 
+            SUPERCLASS = NSWindow; 
+        }, 
+        {
+            CLASS = ClickableTextField; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {switchButton = NSButton; }; 
+            SUPERCLASS = NSTextField; 
+        }, 
+        {CLASS = ConflictView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            ACTIONS = {cancelClicked = id; okClicked = id; }; 
+            CLASS = CredentialDialog; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                addToKeychainCheckBox = NSButton; 
+                captionField = NSTextField; 
+                domainField = NSTextField; 
+                messageField = NSTextField; 
+                passwordField = NSSecureTextField; 
+                userNameField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindow; 
+        }, 
+        {
+            CLASS = DisplayController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {displayPopUpBtn = NSPopUpButton; preferences = Preferences; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {otherFolderSelected = id; }; 
+            CLASS = DriveMountingController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                alertText = NSTextField; 
+                drivesPane = NSView; 
+                pathText = NSTextField; 
+                popUpButton = NSPopUpButton; 
+                preferences = Preferences; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {"" = id; checkForUpdates = id; sendFeedback = id; showSetupSteps = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {restoreDefaults = id; }; 
+            CLASS = KeyMappingController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                conflictAlert = NSView; 
+                conflictView = ConflictView; 
+                identicalAlert = id; 
+                keyboardPane = NSView; 
+                preferences = Preferences; 
+                restoreButton = NSButton; 
+                tableView = NSTableView; 
+                unavailableMappingAlert = NSView; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = LimitedLengthComboBox; LANGUAGE = ObjC; SUPERCLASS = NSComboBox; }, 
+        {
+            CLASS = LimitedLengthSecureTextField; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSSecureTextField; 
+        }, 
+        {CLASS = LimitedLengthTextField; LANGUAGE = ObjC; SUPERCLASS = NSTextField; }, 
+        {
+            ACTIONS = {setupPreferences = id; showHelp = id; }; 
+            CLASS = PreferenceController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                changesAlertView = NSView; 
+                displayController = DisplayController; 
+                displayPane = NSView; 
+                domainField = LimitedLengthTextField; 
+                driveMountingController = DriveMountingController; 
+                drivesPane = NSView; 
+                keyMappingController = KeyMappingController; 
+                keyboardPane = NSView; 
+                loginPane = NSView; 
+                passwordField = NSSecureTextField; 
+                preferences = Preferences; 
+                printerController = PrinterController; 
+                printersPane = NSView; 
+                programsPane = NSView; 
+                securityPane = NSView; 
+                soundPane = NSView; 
+                userNameField = LimitedLengthTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = Preferences; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = PrinterController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                enablePrinterCheckBox = NSButton; 
+                noPrinterLabel = NSPopUpButton; 
+                preferences = Preferences; 
+                printersPopUpBtn = NSPopUpButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = ProgramsController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                appPathField = LimitedLengthTextField; 
+                workingDirField = LimitedLengthTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = RDCApp; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                aboutPanel = AboutPanel; 
+                autoReconnectPanel = AutoReconnectPanel; 
+                credentialDialog = CredentialDialog; 
+                preferenceController = PreferenceController; 
+                preferences = Preferences; 
+            }; 
+            SUPERCLASS = NSApplication; 
+        }, 
+        {
+            ACTIONS = {
+                cancelAutoReconnect = id; 
+                cancelConnect = id; 
+                connect = id; 
+                editFile = id; 
+                fitToWindow = id; 
+                fullScreen = id; 
+                newFile = id; 
+                openFile = id; 
+                quit = id; 
+                saveFile = id; 
+                saveFileAs = id; 
+                sendFeedback = id; 
+            }; 
+            CLASS = SessionController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cancelButton = NSButton; 
+                connectButton = NSButton; 
+                fitToWindowMenuItem = NSMenuItem; 
+                fullScreenMenuItem = NSMenuItem; 
+                logonWindow = NSWindow; 
+                preferenceController = PreferenceController; 
+                preferences = Preferences; 
+                progressIndicator = NSProgressIndicator; 
+                selectAllMenuItem = NSMenuItem; 
+                serverNameField = LimitedLengthTextField; 
+                servicesMenuItem = NSMenuItem; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

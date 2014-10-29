@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl
+END
+stdcheaders.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/stdcheaders.h
+END
+typecheck-gcc.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/typecheck-gcc.h
+END
+curlbuild.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/curlbuild.h.in
+END
+multi.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/multi.h
+END
+mprintf.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/mprintf.h
+END
+curlrules.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/curlrules.h
+END
+easy.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/easy.h
+END
+curlver.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/curlver.h
+END
+curlbuild.h.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/curlbuild.h.cmake
+END
+curl.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/curl.h
+END
+curlbuild.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2604/REV/Lotus/external-libraries/curl-7.21.7-devel-mingw32/include/curl/curlbuild.h
+END

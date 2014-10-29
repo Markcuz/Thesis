@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2579/REV/Lotus/external-libraries/qextserialport/src
+END
+win_qextserialport.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2579/REV/Lotus/external-libraries/qextserialport/src/win_qextserialport.cpp
+END
+qextserialport.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2579/REV/Lotus/external-libraries/qextserialport/src/qextserialport.cpp
+END
+posix_qextserialport.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2579/REV/Lotus/external-libraries/qextserialport/src/posix_qextserialport.cpp
+END
+qextserialport.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2579/REV/Lotus/external-libraries/qextserialport/src/qextserialport.h
+END

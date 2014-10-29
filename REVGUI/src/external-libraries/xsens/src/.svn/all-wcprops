@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src
+END
+xsens_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/xsens_list.h
+END
+xsens_file.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/xsens_file.h
+END
+cmt1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmt1.cpp
+END
+cmt2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmt2.cpp
+END
+cmt3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmt3.cpp
+END
+cmtdef.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmtdef.h
+END
+cmt1.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmt1.h
+END
+xsens_std.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/xsens_std.cpp
+END
+cmt2.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmt2.h
+END
+cmt3.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmt3.h
+END
+cmtpacket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmtpacket.cpp
+END
+xsens_fifoqueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/xsens_fifoqueue.h
+END
+xsens_time.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/xsens_time.cpp
+END
+xsens_janitors.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/xsens_janitors.h
+END
+xsens_exception.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/xsens_exception.cpp
+END
+xsens_std.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/xsens_std.h
+END
+cmtpacket.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmtpacket.h
+END
+xsens_exception.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/xsens_exception.h
+END
+xsens_time.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/xsens_time.h
+END
+cmtscan.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmtscan.cpp
+END
+cmtmessage.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmtmessage.cpp
+END
+pstdint.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/pstdint.h
+END
+cmtscan.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmtscan.h
+END
+cmtmessage.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2590/REV/Lotus/external-libraries/xsens/src/cmtmessage.h
+END

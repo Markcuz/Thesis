@@ -1,0 +1,28 @@
+{
+    IBClasses = (
+        {
+            CLASS = AboutPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                applicationNameField = NSTextField; 
+                copyrightField = NSTextField; 
+                versionField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindow; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = RDCApp; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                aboutPanel = AboutPanel; 
+                autoReconnectPanel = AutoReconnectPanel; 
+                credentialDialog = CredentialDialog; 
+                preferenceController = PreferenceController; 
+                preferences = Preferences; 
+            }; 
+            SUPERCLASS = NSApplication; 
+        }
+    ); 
+    IBVersion = 1; 
+}
