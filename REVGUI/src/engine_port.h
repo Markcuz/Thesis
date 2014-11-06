@@ -24,7 +24,7 @@
 #include <QtCore>
 #include <QTcpSocket>
 #include "io.h"
-#include "/Users/Markcuz/Desktop/REVGUI/alsa-lib-1.0.27.2/include/asoundlib.h"
+#include "/Users/Markcuz/Desktop/Thesis/REVGUI/alsa-lib-1.0.27.2/include/asoundlib.h"
 
 /* SIMULATED GEAR SETTINGS */
 #define MAX_GEARS					12

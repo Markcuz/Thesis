@@ -23,8 +23,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    Media media;
-
+   // Media media;
+/*
 private slots:
     void init_ui();
     void play();
@@ -35,6 +35,7 @@ private slots:
     void add();
     void remove();
     void shuffle();
+    */
 };
 
 #endif // MAINWINDOW_H

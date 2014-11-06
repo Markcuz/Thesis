@@ -5,15 +5,13 @@
 #-------------------------------------------------
 
 QT       += core gui\
-            multimedia
+            multimedia\
+            widgets
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-target.path = /home/pi/
+#target.path = /home/pi/
 TARGET = mediaTest
 INSTALLS += target
 TEMPLATE = app
-
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -22,4 +20,4 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
             media.h
 
-FORMS    += mainwindow.ui
+#FORMS    += mainwindow.ui

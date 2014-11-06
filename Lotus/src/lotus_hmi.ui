@@ -589,6 +589,14 @@ background-color: rgba(255, 0, 4, 50);
           <height>50</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Clear Log</string>
         </property>
@@ -615,6 +623,14 @@ background-color: rgba(255, 0, 4, 50);
           <width>16777215</width>
           <height>50</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="text">
          <string>Run Eng Simu</string>
@@ -668,6 +684,14 @@ background-color: rgba(255, 0, 4, 50);
           <height>50</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Default Settings</string>
         </property>
@@ -680,6 +704,16 @@ background-color: rgba(255, 0, 4, 50);
           <width>16777215</width>
           <height>50</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="text">
          <string>Exit Program</string>
@@ -1323,6 +1357,9 @@ background-color: rgba(255, 0, 4, 50);
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
+          </property>
           <property name="text">
            <string>Stop</string>
           </property>
@@ -1348,6 +1385,9 @@ background-color: rgba(255, 0, 4, 50);
             <height>50</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
+          </property>
           <property name="text">
            <string>Start</string>
           </property>
@@ -1362,6 +1402,9 @@ background-color: rgba(255, 0, 4, 50);
           <width>250</width>
           <height>50</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="text">
          <string>Change max range</string>
@@ -1464,6 +1507,9 @@ background-color: rgba(255, 0, 4, 50);
             <height>100</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
+          </property>
           <property name="text">
            <string>Location</string>
           </property>
@@ -1482,6 +1528,9 @@ background-color: rgba(255, 0, 4, 50);
             <width>125</width>
             <height>50</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
           </property>
           <property name="text">
            <string>Export</string>
@@ -3386,14 +3435,14 @@ border-image: url(:/images/Safetyswitchicon.png);</string>
             <property name="font">
              <font>
               <family>Latha</family>
-              <pointsize>12</pointsize>
+              <pointsize>18</pointsize>
               <weight>50</weight>
               <italic>false</italic>
               <bold>false</bold>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
             </property>
             <property name="text">
              <string>Zoom in</string>
@@ -3420,8 +3469,13 @@ border-image: url(:/images/Safetyswitchicon.png);</string>
               <height>50</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
             </property>
             <property name="text">
              <string>Zoom out</string>
@@ -3585,6 +3639,9 @@ border-image: url(:/images/Safetyswitchicon.png);</string>
               <height>50</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
+            </property>
             <property name="text">
              <string>Load track</string>
             </property>
@@ -3597,6 +3654,9 @@ border-image: url(:/images/Safetyswitchicon.png);</string>
               <width>500</width>
               <height>50</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
             </property>
             <property name="text">
              <string>Delete track</string>
@@ -3634,6 +3694,9 @@ border-image: url(:/images/Safetyswitchicon.png);</string>
       </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
       </property>
       <property name="text">
        <string>Hide Controls</string>
@@ -4570,15 +4633,15 @@ padding:4px;
     </widget>
    </widget>
    <zorder>music</zorder>
+   <zorder>map</zorder>
    <zorder>log</zorder>
    <zorder>home</zorder>
+   <zorder>battery</zorder>
    <zorder>uwaLogo</zorder>
    <zorder>REVlogo</zorder>
-   <zorder>trip</zorder>
    <zorder>tempBlack</zorder>
-   <zorder>map</zorder>
    <zorder>menuButt</zorder>
-   <zorder>battery</zorder>
+   <zorder>trip</zorder>
   </widget>
  </widget>
  <customwidgets>

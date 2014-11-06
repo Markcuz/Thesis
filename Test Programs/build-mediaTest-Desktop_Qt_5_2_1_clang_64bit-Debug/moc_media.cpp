@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Media_t {
-    QByteArrayData data[15];
-    char stringdata[88];
+    QByteArrayData data[14];
+    char stringdata[78];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,13 +41,11 @@ QT_MOC_LITERAL(8, 38, 3),
 QT_MOC_LITERAL(9, 42, 8),
 QT_MOC_LITERAL(10, 51, 6),
 QT_MOC_LITERAL(11, 58, 7),
-QT_MOC_LITERAL(12, 66, 9),
-QT_MOC_LITERAL(13, 76, 4),
-QT_MOC_LITERAL(14, 81, 5)
+QT_MOC_LITERAL(12, 66, 4),
+QT_MOC_LITERAL(13, 71, 5)
     },
     "Media\0init\0\0play\0pause\0stop\0next\0prev\0"
-    "add\0pathName\0remove\0shuffle\0mediaList\0"
-    "read\0write\0"
+    "add\0pathName\0remove\0shuffle\0read\0write\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,7 +55,7 @@ static const uint qt_meta_data_Media[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -65,18 +63,17 @@ static const uint qt_meta_data_Media[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   74,    2, 0x0a,
-       3,    0,   75,    2, 0x0a,
-       4,    0,   76,    2, 0x0a,
-       5,    0,   77,    2, 0x0a,
-       6,    0,   78,    2, 0x0a,
-       7,    0,   79,    2, 0x0a,
-       8,    1,   80,    2, 0x0a,
-      10,    0,   83,    2, 0x0a,
-      11,    0,   84,    2, 0x0a,
-      12,    0,   85,    2, 0x0a,
-      13,    0,   86,    2, 0x08,
-      14,    0,   87,    2, 0x08,
+       1,    0,   69,    2, 0x0a,
+       3,    0,   70,    2, 0x0a,
+       4,    0,   71,    2, 0x0a,
+       5,    0,   72,    2, 0x0a,
+       6,    0,   73,    2, 0x0a,
+       7,    0,   74,    2, 0x0a,
+       8,    1,   75,    2, 0x0a,
+      10,    0,   78,    2, 0x0a,
+      11,    0,   79,    2, 0x0a,
+      12,    0,   80,    2, 0x08,
+      13,    0,   81,    2, 0x08,
 
  // slots: parameters
     QMetaType::Bool,
@@ -88,7 +85,6 @@ static const uint qt_meta_data_Media[] = {
     QMetaType::Void, QMetaType::QString,    9,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::QStringList,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -110,10 +106,8 @@ void Media::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         case 6: _t->add((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 7: _t->remove(); break;
         case 8: _t->shuffle(); break;
-        case 9: { QStringList _r = _t->mediaList();
-            if (_a[0]) *reinterpret_cast< QStringList*>(_a[0]) = _r; }  break;
-        case 10: _t->read(); break;
-        case 11: _t->write(); break;
+        case 9: _t->read(); break;
+        case 10: _t->write(); break;
         default: ;
         }
     }
@@ -144,13 +138,13 @@ int Media::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 12;
+        _id -= 11;
     }
     return _id;
 }

@@ -9,10 +9,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    init_ui();
+    //init_ui();
 }
 
-
+/*
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -72,5 +72,19 @@ void MainWindow::remove() {
 void MainWindow::shuffle() {
     media.shuffle();
 }
+*/
+/*
+void MainWindow::setupTable() {
+    QMediaPlaylist playlist= media.mediaList();
+
+    ui->tableWidget->setRowCount(playlist.mediaCount());
+    ui->tableWidget->setColumnCount(3);
+
+    for(int i=0; i<playlist.mediaCount(); i++) {
+        //setup Song
+
+    }
+}
+*/
 
 

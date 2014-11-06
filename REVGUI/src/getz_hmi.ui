@@ -565,7 +565,7 @@ background-color: rgba(255, 0, 4, 50);
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">selection-color: rgb(255, 0, 0);</string>
+         <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="text">
          <string>Clear Log</string>
@@ -617,7 +617,7 @@ background-color: rgba(255, 0, 4, 50);
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">selection-color: rgb(255, 0, 0);</string>
+         <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="text">
          <string>Run Eng Simu</string>
@@ -694,7 +694,7 @@ background-color: rgba(255, 0, 4, 50);
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">selection-color: rgb(255, 0, 0);</string>
+         <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="text">
          <string>Default Settings</string>
@@ -718,7 +718,7 @@ background-color: rgba(255, 0, 4, 50);
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">selection-color: rgb(255, 0, 0);</string>
+         <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="text">
          <string>Exit Program</string>
@@ -778,10 +778,54 @@ background-color: rgb(212, 212, 212);</string>
       <string>Save Efficiency</string>
      </property>
     </widget>
+    <widget class="QLabel" name="average_energy_label">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>380</y>
+       <width>201</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Average Efficiency</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>480</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Current Efficiency</string>
+     </property>
+    </widget>
     <zorder>layoutWidget_3</zorder>
     <zorder>textBrowser_errors</zorder>
     <zorder>saveEfficiencyButton</zorder>
     <zorder>efficiencyPlot</zorder>
+    <zorder>average_energy_label</zorder>
+    <zorder>label_12</zorder>
    </widget>
    <widget class="QWidget" name="trip" native="true">
     <property name="geometry">
@@ -878,6 +922,9 @@ background-color: rgba(255, 0, 4, 50);
             <pointsize>20</pointsize>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
+          </property>
           <property name="text">
            <string>Stop</string>
           </property>
@@ -908,6 +955,9 @@ background-color: rgba(255, 0, 4, 50);
             <pointsize>20</pointsize>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
+          </property>
           <property name="text">
            <string>Start</string>
           </property>
@@ -927,6 +977,9 @@ background-color: rgba(255, 0, 4, 50);
          <font>
           <pointsize>20</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
         </property>
         <property name="text">
          <string>Change max range</string>
@@ -1034,6 +1087,9 @@ background-color: rgba(255, 0, 4, 50);
             <pointsize>20</pointsize>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
+          </property>
           <property name="text">
            <string>Location</string>
           </property>
@@ -1058,12 +1114,27 @@ background-color: rgba(255, 0, 4, 50);
             <pointsize>20</pointsize>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">selection-background-color: rgb(255, 0, 0);</string>
+          </property>
           <property name="text">
            <string>Export</string>
           </property>
          </widget>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_11">
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Directory Location:</string>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_exportLocation">
@@ -1080,7 +1151,7 @@ background-color: rgba(255, 0, 4, 50);
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>Directory</string>
+         <string>--</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -1769,7 +1840,7 @@ background-color: rgba(255, 0, 4, 50);
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="text">
@@ -3090,7 +3161,10 @@ border-image: url(:/images/Safetyswitchicon.png);</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">QCheckBox::indicator {
+     width: 40px;
+     height: 40px;
+}</string>
             </property>
             <property name="text">
              <string>Center</string>
@@ -3125,6 +3199,12 @@ border-image: url(:/images/Safetyswitchicon.png);</string>
               <family>Lucida Grande</family>
               <pointsize>20</pointsize>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QCheckBox::indicator {
+     width: 40px;
+     height: 40px;
+}</string>
             </property>
             <property name="text">
              <string>Show my track</string>
@@ -3805,15 +3885,15 @@ border-image: url(:/images/next.png);</string>
      </layout>
     </widget>
    </widget>
-   <zorder>music</zorder>
-   <zorder>home</zorder>
    <zorder>trip</zorder>
    <zorder>log</zorder>
+   <zorder>home</zorder>
+   <zorder>map</zorder>
    <zorder>tempBlack</zorder>
    <zorder>REVlogo</zorder>
    <zorder>uwaLogo</zorder>
    <zorder>menuButt</zorder>
-   <zorder>map</zorder>
+   <zorder>music</zorder>
   </widget>
  </widget>
  <customwidgets>

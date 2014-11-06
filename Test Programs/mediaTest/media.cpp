@@ -4,7 +4,7 @@ Media::Media()
 {
 
 }
-
+/*
 bool Media::init() {
     playlistPath = "/Users/Markcuz/Desktop/";
     QDir::setCurrent(playlistPath);
@@ -83,9 +83,11 @@ void Media::shuffle() {
     playlist.shuffle();
 }
 
-QStringList Media::mediaList() {
-    return playlistString;
+*/
+/*
+QMediaPlaylist Media::mediaList() {
+    return playlist;
 }
 
 
-
+*/

@@ -26,7 +26,6 @@ public slots:
     void add(QString pathName);
     void remove();
     void shuffle();
-    QStringList mediaList();
 
 private:
     QMediaPlayer player;
@@ -38,6 +37,8 @@ private:
 private slots:
     void read();
     void write();
+
 };
+
 
 #endif // MEDIA_H

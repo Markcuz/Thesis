@@ -26,7 +26,7 @@ REV_HMI::REV_HMI(QWidget *parent) :
     //start car io.cpp
     io.init();
 
-    media.init();
+    //media.init();
 
     //?
     soundOn = false;
@@ -162,7 +162,6 @@ void REV_HMI::init_ui()
 
     efficiencyCount = 75;
     totalRecords = 100;
-
 
     //changing display will add later
     night = QTime(18,00);
@@ -331,16 +330,9 @@ void REV_HMI::init_ui_map()
 
     ui->checkBox_autoFollow->setChecked(ui->mapWidget->isCentered());
     connect(ui->checkBox_autoFollow, SIGNAL(toggled(bool)), ui->mapWidget, SLOT(setCentered(bool)));
-    ui->checkBox_nightMode->setChecked(ui->mapWidget->isNightmode());
-    connect(ui->checkBox_nightMode, SIGNAL(toggled(bool)), ui->mapWidget, SLOT(toggleNightMode()));
+
     ui->checkBox_showMyTrack->setChecked(ui->mapWidget->isVisibleMyTrack());
     connect(ui->checkBox_showMyTrack, SIGNAL(toggled(bool)), ui->mapWidget, SLOT(showMyTrack(bool)));
-    ui->checkBox_showTestTrack->setChecked(ui->mapWidget->isVisibleTestTrack());
-    connect(ui->checkBox_showTestTrack, SIGNAL(toggled(bool)), ui->mapWidget, SLOT(showTestTrack(bool)));
-    ui->checkBox_showComments->setChecked(ui->mapWidget->isVisibleTestTrackComments());
-    connect(ui->checkBox_showComments, SIGNAL(toggled(bool)), ui->mapWidget, SLOT(showTestTrackComments(bool)));
-    ui->checkBox_showComments->setEnabled(ui->mapWidget->isVisibleTestTrack());
-    connect(ui->checkBox_showTestTrack, SIGNAL(toggled(bool)), ui->checkBox_showComments, SLOT(setEnabled(bool)));
 }
 
 //hideMapCont()
@@ -515,14 +507,6 @@ void REV_HMI::setInfo()
     }
 
 #endif
-
-#ifdef LOTUS
-    case 6: {
-        ui->battBut->setFocus();
-        break;
-    }
-
-#endif
     }
 }
 
@@ -588,6 +572,7 @@ void REV_HMI::enterPage()
         ui->music->hide();
         ui->trip->hide();
         ui->log->hide();
+         ui->homeBut->setFocus();
 
         ui->home->setDisabled(false);
         ui->map->setDisabled(true);
@@ -635,7 +620,7 @@ void REV_HMI::enterPage()
         ui->music->hide();
         ui->trip->hide();
         ui->log->hide();
-        ui->musicBut->setFocus();
+        ui->mapBut->setFocus();
 
         ui->home->setDisabled(true);
         ui->map->setDisabled(false);
@@ -663,6 +648,7 @@ void REV_HMI::enterPage()
         ui->battery->show();
         ui->trip->hide();
         ui->log->hide();
+         ui->battBut->setFocus();
 
         ui->home->setDisabled(true);
         ui->map->setDisabled(true);
