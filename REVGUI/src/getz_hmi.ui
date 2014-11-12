@@ -3885,15 +3885,15 @@ border-image: url(:/images/next.png);</string>
      </layout>
     </widget>
    </widget>
-   <zorder>trip</zorder>
+   <zorder>map</zorder>
+   <zorder>music</zorder>
    <zorder>log</zorder>
    <zorder>home</zorder>
-   <zorder>map</zorder>
    <zorder>tempBlack</zorder>
    <zorder>REVlogo</zorder>
    <zorder>uwaLogo</zorder>
    <zorder>menuButt</zorder>
-   <zorder>music</zorder>
+   <zorder>trip</zorder>
   </widget>
  </widget>
  <customwidgets>

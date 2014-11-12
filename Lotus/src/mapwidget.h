@@ -29,7 +29,7 @@ static const int defaultZoom = 15;
 
 static const bool defaultCentered = true;
 static const bool defaultInvert = false;
-static const bool defaultMyTrackVisible = false;
+static const bool defaultMyTrackVisible = true;
 static const bool defaultTestTrackVisible = false;
 static const bool defaultTestTrackCmtsVisible = false;
 static const QString defaultTrackFile = "testtrack.gpx";

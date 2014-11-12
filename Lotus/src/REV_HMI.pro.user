@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.0.1, 2014-11-06T21:47:49. -->
+<!-- Written by QtCreator 3.0.1, 2014-11-12T23:48:01. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -201,8 +201,8 @@
        <value type="QString">/Users/Markcuz/Desktop/Lotus/build-REV_HMI-Raspberry_Pi-Debug/REV_HMI_LOTUS</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedHosts">
-       <value type="QString">10.1.1.3</value>
        <value type="QString">10.1.1.14</value>
+       <value type="QString">10.1.1.3</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedRemotePaths">
        <value type="QString">/home/pi</value>
@@ -213,8 +213,8 @@
        <value type="QString"></value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedTimes">
-       <value type="QDateTime">2014-11-06T21:44:47</value>
        <value type="QDateTime">2014-10-08T23:44:38</value>
+       <value type="QDateTime">2014-11-12T23:26:48</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>

@@ -144,7 +144,6 @@ private slots:
 
     void graphEfficiency(QCustomPlot *efficiencyPlot);
 
-    void realtimeDataSlot();
 
     //Previous
     //void on_pushButton_updateTrafficData_clicked();

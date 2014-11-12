@@ -39,7 +39,7 @@
 #define RPM_MAX						5000
 #define TURBO_SHIFT_DOWN_THROTTLE	0.400f
 
-static const QString soundDir = "Sounds/";
+static const QString soundDir = "/home/pi/Sounds/";
 static const QString clickf = "click.wav";
 static const QString vf = "vol.wav";
 static const QString bf = "alert.wav";

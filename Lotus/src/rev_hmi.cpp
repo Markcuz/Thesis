@@ -341,11 +341,11 @@ void REV_HMI::on_mapContHide_clicked() {
     if(ui->mapControls->isHidden()) {
         ui->mapControls->setEnabled(true);
         ui->mapControls->show();
-        ui->mapContHide->setText("Show Controls");
+        ui->mapContHide->setText("Hide Controls");
     } else {
         ui->mapControls->setDisabled(true);
         ui->mapControls->hide();
-        ui->mapContHide->setText("Hide Controls");
+        ui->mapContHide->setText("Show Controls");
     }
 
 }
@@ -798,6 +798,57 @@ void REV_HMI::update_ui_battery(BatteryData batteryData)
     ui->l_voltage->setText(bat3);
     ui->l_current->setText(QString().setNum(batteryData.current, 'f', 2));
 
+    //adding voltage lsits
+    if (voltageList.size() < 3600) {
+        voltageList<<(int)batteryData.voltage;
+    }
+    else {
+        voltageList.removeFirst();
+        voltageList<<(int)batteryData.voltage;
+    }
+
+    //adding current list
+    if (currentList.size()<3600) {
+        currentList<<(int)(batteryData.current*-1);
+    }
+    else {
+        currentList.removeFirst();
+        currentList<<(int)(batteryData.current*-1);
+    }
+
+    totalRecords++;
+
+    if(batteryData.current<150) {
+        efficiencyCount++;
+    }
+
+    float efficiency = 0.00;
+
+    efficiency = efficiencyCount/totalRecords*100;
+
+    ui->efficiencyLabel->setText(QString().setNum(efficiency)+" %");
+
+    if(efficiency<50) {
+        ui->efficiencyBar->setStyleSheet("QProgressBar::chunk {background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0.5 rgb(210, 0, 0), stop:1 rgb(30, 30, 30));}");
+        ui->efficiencyBar->setValue((int)efficiency);
+    }
+    else {
+        ui->efficiencyBar->setStyleSheet("QProgressBar::chunk {background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(0, 200, 0), stop:1 rgb(90, 255,80));}");
+        ui->efficiencyBar->setValue((int)efficiency);
+    }
+
+    float currentUse;
+    currentUse = (float)batteryData.energyUsed;
+
+    ui->energyUse->setText(QString().setNum(currentUse, 'f', 1));
+
+    QString distText = ui->l_trip_distance->text();
+
+    float dist = distText.toFloat();
+    float econ = currentUse/dist;
+
+    ui->val_economy->setText(QString().setNum(econ, 'f', 2) + " Wh/km");
+
     // Trip Min/Max Cell Voltages
     QString maxb;
     QString minb;
@@ -1068,12 +1119,10 @@ void REV_HMI::update_ui_io(IOData ioData) {
 void REV_HMI::nightMode(bool night) {
     if(night) {
         ui->centralWidget->setStyleSheet("#centralWidget{border-image: url(:/images/bgn.png);}QLabel{font: 75 20pt \"Arial\";color: rgb(255, 255, 255);}QToolButton{color:rgb(255,255,255);}QCheckBox{color:rgb(255,255,255);font: 75 17pt \"Arial\";}QPushButton{font: 75 17pt \"Arial\";}");
-        ui->checkBox_nightMode->setChecked(true);
         isNight = true;
         settings.setValue("car/night",true);
     } else{
         ui->centralWidget->setStyleSheet("#centralWidget{border-image: url(:/images/bg.png);}QLabel{font: 75 20pt \"Arial\";color: rgb(0, 0, 0);}QToolButton{color:rgb(0,0,0);}QCheckBox{color:rgb(0,0,0);font: 75 17pt \"Arial\";}QPushButton{font: 75 17pt \"Arial\";}");
-        ui->checkBox_nightMode->setChecked(false);
         isNight = false;
         settings.setValue("car/night",false);
     }
@@ -1490,7 +1539,7 @@ void REV_HMI::on_pushButton_location_clicked()
         fileNames = dialog.selectedFiles();
     }
     if(fileNames.size() > 0) {
-        //ui->label_exportLocation->setText(fileNames.at(0));
+        ui->label_exportLocation->setText(fileNames.at(0));
         export_path = fileNames.at(0);
     }
 }
@@ -1533,71 +1582,51 @@ void REV_HMI::on_pushButton_NNreset_clicked()
 
 //Graphs
 
+void REV_HMI::graphEfficiency(QCustomPlot *customPlot) {
 
-void REV_HMI::graphEfficiency(QCustomPlot *efficiencyPlot) {
+    customPlot->legend->setVisible(true);
+    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignLeft);
 
-    efficiencyPlot->addGraph(); // blue line
-    efficiencyPlot->graph(0)->setPen(QPen(Qt::blue));
-    efficiencyPlot->graph(0)->setBrush(QBrush(QColor(240, 255, 200)));
-    efficiencyPlot->graph(0)->setAntialiasedFill(false);
-    efficiencyPlot->addGraph(); // red line
-    efficiencyPlot->graph(1)->setPen(QPen(Qt::red));
-    efficiencyPlot->graph(0)->setChannelFillGraph(efficiencyPlot->graph(1));
+    customPlot->addGraph(customPlot->xAxis, customPlot->yAxis);
+    customPlot->graph(0)->setPen(QPen(Qt::blue)); // line color blue for first graph
+    customPlot->graph(0)->setName("Distance");
 
-    efficiencyPlot->addGraph(); // blue dot
-    efficiencyPlot->graph(2)->setPen(QPen(Qt::blue));
-    efficiencyPlot->graph(2)->setLineStyle(QCPGraph::lsNone);
-    efficiencyPlot->graph(2)->setScatterStyle(QCPScatterStyle::ssDisc);
-    efficiencyPlot->addGraph(); // red dot
-    efficiencyPlot->graph(3)->setPen(QPen(Qt::red));
-    efficiencyPlot->graph(3)->setLineStyle(QCPGraph::lsNone);
-    efficiencyPlot->graph(3)->setScatterStyle(QCPScatterStyle::ssDisc);
+    customPlot->addGraph(customPlot->xAxis, customPlot->yAxis2);
+    customPlot->graph(1)->setPen(QPen(Qt::red)); // line color red for second graph
+    customPlot->graph(1)->setName("Energy Use");
 
-    efficiencyPlot->xAxis->setTickLabelType(QCPAxis::ltDateTime);
-    efficiencyPlot->xAxis->setDateTimeFormat("hh:mm:ss");
-    efficiencyPlot->xAxis->setAutoTickStep(false);
-    efficiencyPlot->xAxis->setTickStep(2);
-    efficiencyPlot->axisRect()->setupFullAxesBox();
+    customPlot->plotLayout()->insertRow(0);
+    customPlot->plotLayout()->addElement(0, 0, new QCPPlotTitle(customPlot, "Distance/Energy Use"));
 
-    // make left and bottom axes transfer their ranges to right and top axes:
-    connect(efficiencyPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), efficiencyPlot->xAxis2, SLOT(setRange(QCPRange)));
-    connect(efficiencyPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), efficiencyPlot->yAxis2, SLOT(setRange(QCPRange)));
+    customPlot->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
+    customPlot->graph(1)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssSquare, 5));
 
-    // setup a timer that repeatedly calls MainWindow::realtimeDataSlot:
-    connect(&dataTimer, SIGNAL(timeout()), this, SLOT(realtimeDataSlot()));
-    dataTimer.start(100); // Interval 0 means to refresh as fast as possible
-}
+    //configure axes
+    customPlot->xAxis->setVisible(true);
+    customPlot->xAxis->setTicks(false);
+    customPlot->xAxis ->setLabel("Trip");
+    customPlot->yAxis->setVisible(true);
+    customPlot->yAxis->setLabel("Distance (km)");
+    customPlot->yAxis->setTickLabels(true);
+    customPlot->yAxis2->setVisible(true);
+    customPlot->yAxis2->setLabel("Energy Use (kWh)");
+    customPlot->yAxis2->setTickLabels(true);
 
-void REV_HMI::realtimeDataSlot()
-{
-  // calculate two new data points:
-  double key = QDateTime::currentDateTime().toMSecsSinceEpoch()/1000.0;
+    /*QStringList data = readEfficiency();
 
-  static double lastPointKey = 0;
-  if (key-lastPointKey > 0.01) // at most add point every 10 ms
-  {
-    double value0 = qSin(key); //sin(key*1.6+cos(key*1.7)*2)*10 + sin(key*1.2+0.56)*20 + 26;
-    double value1 = qCos(key); //sin(key*1.3+cos(key*1.2)*1.2)*7 + sin(key*0.9+0.26)*24 + 26;
-    // add data to lines:
-    ui->efficiencyPlot->graph(0)->addData(key, value0);
-    ui->efficiencyPlot->graph(1)->addData(key, value1);
-    // set data of dots:
-    ui->efficiencyPlot->graph(2)->clearData();
-    ui->efficiencyPlot->graph(2)->addData(key, value0);
-    ui->efficiencyPlot->graph(3)->clearData();
-    ui->efficiencyPlot->graph(3)->addData(key, value1);
-    // remove data of lines that's outside visible range:
-    ui->efficiencyPlot->graph(0)->removeDataBefore(key-8);
-    ui->efficiencyPlot->graph(1)->removeDataBefore(key-8);
-    // rescale value (vertical) axis to fit the current data:
-    ui->efficiencyPlot->graph(0)->rescaleValueAxis();
-    ui->efficiencyPlot->graph(1)->rescaleValueAxis(true);
-    lastPointKey = key;
-  }
-  // make key axis range scroll with the data (at a constant range size of 8):
-  ui->efficiencyPlot->xAxis->setRange(key+0.25, 8, Qt::AlignRight);
-  ui->efficiencyPlot->replot();
+    int i=0;
 
+    if(!data.isEmpty()) {
+    while(i<data.size()) {
+        QString temp = data.at(i);
+
+        QStringList splitted = temp.split(",");
+        ui->efficiencyPlot->graph(0)->addData(i, splitted.at(1).toFloat());
+        ui->efficiencyPlot->graph(1)->addData(i, splitted.at(0).toFloat());
+        i++;
+    }
+    }
+*/
 }
 
 void REV_HMI::graphIV(QCustomPlot *customPlot) {
